@@ -11,7 +11,7 @@ const projects = [
       "A complete notes management system where users can create, manage, and summarize notes using AI-powered NLP models. Built with a scalable backend and a modern frontend.",
     tech: ["React", "Node.js", "Express", "PostgreSQL"],
     github: "https://github.com/amritgupta0680/-AI-Powered-Notes-App.git",
-    demo: "https://github.com/amritgupta0680/-AI-Powered-Notes-App.git",
+    demo: "https://drive.google.com/file/d/1sTbzbLZc5STN2xU7SuWj2HJl-2VWaLoY/view?usp=drive_link",
   },
   {
     title: "Facial Emotion Recognition",
@@ -21,7 +21,7 @@ const projects = [
       "A CNN-based deep learning system trained on facial datasets to classify emotions from images using OpenCV and Python.",
     tech: ["Python", "CNN", "OpenCV","flask"],
     github: "https://github.com/amritgupta0680/FER-Facial-Emotion-Recognition-.git",
-    demo:"https://github.com/amritgupta0680/FER-Facial-Emotion-Recognition-.git",
+    demo:"https://drive.google.com/file/d/1wuaXsRZCrGa0QgSbT9PFmiZ9tt3R19Yl/view?usp=sharing",
   },
   {
     title: "IMDB Sentiment Analysis",
@@ -31,7 +31,7 @@ const projects = [
       "Uses NLP pipelines and RNN architectures to predict sentiment polarity (positive/negative) from IMDB movie reviews.",
     tech: ["Python", "NLP", "RNN", "Streamlit"],
     github: "https://github.com/amritgupta0680/IMDB-Sentiment-Analysis-RNN.git",
-    demo:"https://github.com/amritgupta0680/IMDB-Sentiment-Analysis-RNN.git",
+    demo:"https://drive.google.com/file/d/1W3udjQOMgfuP6TI0SNZd5OSQcssG7mUl/view?usp=drive_link",
   },
   {
     title: "Threadink App",
@@ -41,8 +41,7 @@ const projects = [
       "A full-stack web application enabling content creation, user engagement, authentication, and backend API integration.",
     tech: ["React", "Node.js", "Express","Postgress SQL"],
     github: "https://github.com/amritgupta0680/threadink-app.git",
-    demo:
-      "https://drive.google.com/file/d/15VVx9ioDEXsEdzMeXF1jGQWY8KF21OzK/view",
+    demo:"https://drive.google.com/file/d/15VVx9ioDEXsEdzMeXF1jGQWY8KF21OzK/view",
   },
   {
     title: "Electricity Load Forecasting",
@@ -52,7 +51,7 @@ const projects = [
       "Predicts electricity demand patterns using historical data and machine learning time-series models for improved energy planning.",
     tech: ["Python", "Machine Learning", "Time Series", "flask"],
     github: "https://github.com/amritgupta0680/electricity-load-forecasting.git",
-    demo:"https://github.com/amritgupta0680/electricity-load-forecasting.git",
+    demo:"https://drive.google.com/file/d/19WqBlzJwM4o0H6ceHekZxfkO59_DD4ZV/view?usp=sharing",
   },
   {
     title: "Personalized Diet Recommender",
@@ -62,7 +61,7 @@ const projects = [
       "Provides personalized diet plans using machine learning based on user health, goals, and nutritional requirements.",
     tech: ["Python", "Machine Learning", "Deep Learning", "Streamlit"],
     github: "https://github.com/amritgupta0680/Personalize-Diet-Recommender.git",
-    demo:"https://github.com/amritgupta0680/Personalize-Diet-Recommender.git",
+    demo:"https://drive.google.com/file/d/1soP2uGuwJv8LeHdOWyxNt9V-1vH_xkce/view?usp=sharing",
   },
   {
     title: "Exercise Form Estimator",
