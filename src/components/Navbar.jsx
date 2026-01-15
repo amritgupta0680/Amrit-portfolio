@@ -60,7 +60,7 @@ export default function Navbar() {
         {/* CTA */}
         <div className="nav-cta">
           <a
-            href="public/resume/Amrit Gupta.pdf"
+            href="public/resume/Amrit_Gupta_Resume.pdf"
             download
             className="resume-btn"
           >
