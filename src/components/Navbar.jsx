@@ -60,7 +60,9 @@ export default function Navbar() {
         {/* CTA */}
         <div className="nav-cta">
           <a
-            href="public/resume/Amrit_Gupta_Resume.pdf"
+            href="https://drive.google.com/uc?export=download&id=1aH2h_baJki7H-PkLWmuLKUBq091iErKf"
+            target="_blank"
+            rel="noreferrer"
             download
             className="resume-btn"
           >
