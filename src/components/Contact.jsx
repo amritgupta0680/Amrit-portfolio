@@ -80,7 +80,7 @@ export default function Contact() {
               <span>📞</span>
               <div>
                 <p className="label">Phone</p>
-                <p>+91 8073467079</p>
+                <p>+91 9004858206</p>
               </div>
             </div>
 
