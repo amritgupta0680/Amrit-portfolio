@@ -58,6 +58,8 @@ I am actively seeking opportunities in Data Science and Generative AI roles wher
 
 ## EDUCATION
 - Degree: Bachelor of Engineering (B.E.) in Artificial Intelligence and Data Science
+- University: University of Mumbai
+- College: Rajiv Gandhi Institute of Technology (RGIT), Andheri West, Mumbai – 400061
 - Currently in Final Year
 - Relevant Coursework: Machine Learning, Deep Learning, Natural Language Processing, Data Structures & Algorithms, Database Management Systems, Computer Vision
 
@@ -94,6 +96,13 @@ I am actively seeking opportunities in Data Science and Generative AI roles wher
 - Learning from AI experts like Krish Naik.
 - Exploring new Generative AI research and tools.
 
+## EXPERIENCE
+- Web Development Intern | Zaalima Development | April 2025 – July 2025
+  Designed and developed a fully responsive e-commerce website, improving user experience and streamlining the online shopping workflow.
+
+## LOCATION
+- Based in: Seven Bungalows, Andheri West, Mumbai – 400061, Maharashtra, India.
+
 ## LOOKING FOR
 - Data Science roles (internship or full-time)
 - Generative AI / LLM Engineer roles
@@ -106,7 +115,11 @@ A: Yes! Reach out via LinkedIn or the contact form on the portfolio.
 Q: Does Amrit have leadership experience?
 A: Yes, he served as Managing Director of CRID and Event Manager for the Entrepreneurship Cell.
 Q: What are Amrit's hobbies?
-A: Fitness/gym, building AI projects, and learning from experts like Krish Naik.
+A: Fitness/gym, building AI projects, and learning from industry experts.
+Q: Where is Amrit located?
+A: Amrit is based in Andheri West, Mumbai – 400061, Maharashtra, India.
+Q: Does Amrit have any work experience?
+A: Yes! Amrit completed a Web Development Internship at Zaalima Development (April 2025 – July 2025), where he designed and developed a fully responsive e-commerce website.
 `;
 
     const apiMessages = [
@@ -121,7 +134,7 @@ A: Fitness/gym, building AI projects, and learning from experts like Krish Naik.
         "Authorization": `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: "llama-3.1-8b-instant",
+        model: "llama3-8b-8192",
         messages: apiMessages,
         temperature: 0.7,
         max_tokens: 500
