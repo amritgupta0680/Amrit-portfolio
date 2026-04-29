@@ -131,7 +131,9 @@ A: Fitness/gym, building AI projects, and learning from experts like Krish Naik.
     if (!response.ok) {
       const errorData = await response.json();
       console.error("Groq API Error:", errorData);
-      return res.status(response.status).json({ error: "Failed to fetch response from Groq." });
+      return res.status(response.status).json({ 
+        error: errorData.error?.message || "Failed to fetch response from Groq." 
+      });
     }
 
     const data = await response.json();

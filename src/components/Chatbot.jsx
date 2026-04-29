@@ -28,26 +28,37 @@ export default function Chatbot() {
     setIsTyping(true);
 
     try {
+      // Filter out the initial static greeting to prevent 400 errors from Groq/LLaMA
+      // LLaMA 3 strictly expects the first message after the system prompt to be a 'user' message.
+      const apiMessagesPayload = newMessages.filter(
+        (msg, index) => !(index === 0 && msg.role === "assistant")
+      );
+
       // Note: We use relative path for Vercel Serverless Function correctly setup in local /api/ directory
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         // Pass only the conversation payload to the backend
-        body: JSON.stringify({ messages: newMessages })
+        body: JSON.stringify({ messages: apiMessagesPayload })
       });
 
       if (!response.ok) {
-        throw new Error("Failed to communicate with AI");
+        let errMsg = "Failed to communicate with AI";
+        try {
+          const errData = await response.json();
+          if (errData.error) errMsg = errData.error;
+        } catch (e) {}
+        throw new Error(errMsg);
       }
 
       const data = await response.json();
       const aiMsg = data.choices[0].message;
       setMessages((prev) => [...prev, aiMsg]);
     } catch (error) {
-      console.error(error);
+      console.error("Chat API Error:", error);
       setMessages((prev) => [
         ...prev, 
-        { role: "assistant", content: "Oops! We hit a snag. The API might be down or misconfigured (Make sure GROQ_API_KEY is in Vercel!). Please try again later." }
+        { role: "assistant", content: `Oops! We hit a snag. Error: ${error.message}. Please try again later.` }
       ]);
     } finally {
       setIsTyping(false);
