@@ -1,6 +1,10 @@
+export const config = {
+  api: {
+    bodyParser: true,
+  },
+};
+
 export default async function handler(req, res) {
-  // Add CORS headers for local testing, Vercel handles this in production via vercel.json usually, 
-  // but good for direct API endpoints.
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
@@ -16,9 +20,15 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { messages } = req.body;
+    // Safely parse body — handles both raw and pre-parsed cases
+    let body = req.body;
+    if (typeof body === "string") {
+      try { body = JSON.parse(body); } catch { body = {}; }
+    }
 
-    if (!messages || !Array.isArray(messages)) {
+    const { messages } = body || {};
+
+    if (!messages || !Array.isArray(messages) || messages.length === 0) {
       return res.status(400).json({ error: "Invalid messages array." });
     }
 
@@ -52,42 +62,53 @@ I am actively seeking opportunities in Data Science and Generative AI roles wher
 - Relevant Coursework: Machine Learning, Deep Learning, Natural Language Processing, Data Structures & Algorithms, Database Management Systems, Computer Vision
 
 ## SKILLS
-- Generative AI & LLMs: LangChain, RAG Pipelines, Prompt Engineering, LLM Fine-Tuning (LoRA), Vector Databases (FAISS, ChromaDB), Models (GPT, LLaMA 3, Gemma), Agentic AI (LangGraph, CrewAI).
-- AI & Machine Learning: PyTorch, TensorFlow, Deep Learning, CNN (EfficientNet-B0), RNN, Transformers (Self-Attention, Encoder-Decoder).
+- Generative AI & LLMs: LangChain, RAG Pipelines, Prompt Engineering, LLM Fine-Tuning (LoRA, QLoRA), Vector Databases (FAISS, ChromaDB, Pinecone), Models (GPT, LLaMA 3, Gemma), Agentic AI (LangGraph, CrewAI), MCP, AWS Bedrock, Nvidia NIM.
+- AI & Machine Learning: PyTorch, TensorFlow, Deep Learning, CNN (EfficientNet-B0), RNN, LSTM, GRU, Transformers (Self-Attention, Multi-Head Attention, Encoder-Decoder, Positional Encoding).
 - Programming: Python (Primary), JavaScript, C++, SQL.
-- Tools: Flask, Streamlit, PostgreSQL, AWS (SageMaker, Bedrock).
+- Tools: Flask, Streamlit, OpenCV, MTCNN, PostgreSQL, MySQL, Power BI, Git, GitHub, Hugging Face, Neo4j, AWS SageMaker, AWS Lambda.
 
 ## PROJECTS
-1. FER + Emotion-Based Music Recommender (Advanced Version): Real-time Facial Emotion Recognition system using EfficientNet-B0 and MTCNN face detection. Recommends Bollywood songs matched to detected mood. Supports voice input (Speech-to-text) and YouTube search.
-2. Generative AI — LangChain & RAG Pipeline: End-to-end pipelines using vector stores and LLMs for domain-specific questions. Features agent workflows.
-3. AI-Powered Notes App: Full-stack app utilizing AI to generate concise note summaries. (React, Node, PostgreSQL).
-4. IMDB Sentiment Analysis: Movie review sentiment prediction using RNNs.
-5. Electricity Load Forecasting: Time-series forecasting for electricity demand patterns.
-6. Personalized Diet Recommender: Machine learning-based nutrition recommender.
-7. Threadink App: Full-stack content creation platform.
+1. FER + Emotion-Based Music Recommender (Advanced): Real-time Facial Emotion Recognition using EfficientNet-B0 and MTCNN. Detects emotion over 10-second window, recommends Bollywood songs (1990-2025) matched to mood. Supports voice input and YouTube search. Tech: Python, PyTorch, Flask, OpenCV.
+2. Generative AI — LangChain & RAG Pipeline: End-to-end RAG pipelines using LangChain, vector stores and LLMs. Features prompt engineering, memory, agents. Based on Krish Naik's course.
+3. AI-Powered Notes App: Full-stack app with AI-generated summaries. Tech: React, Node.js, Express, PostgreSQL.
+4. IMDB Sentiment Analysis: Movie review sentiment prediction using RNNs. Tech: Python, TensorFlow.
+5. Electricity Load Forecasting: Time-series forecasting for electricity demand. Tech: Python, ML.
+6. Personalized Diet Recommender: ML-based nutrition recommendation system.
+7. Threadink App: Full-stack content creation platform. Tech: React, Node.js, Express.
 
 ## CERTIFICATIONS & COURSES
-- Complete Generative AI Course with LangChain & Hugging Face — Krish Naik
+- Complete Generative AI Course with LangChain & Hugging Face — Krish Naik (Featured)
+  Topics covered: LSTM, GRU, Transformers, LLMs, LangChain, RAG, Chatbots, Fine-Tuning (LoRA/QLoRA), LangGraph, CrewAI, MCP, AWS Bedrock, Nvidia NIM, Neo4j Graph Databases.
 - Supervised Machine Learning — Coursera
 - Generative AI Fundamentals — Google Cloud
+- Web Development Bootcamp — Udemy
+- Microsoft Power BI — Infosys
 
 ## LEADERSHIP & ACTIVITIES
-- Managing Director — CRID: Managed multi-domain teams for flagship events, making high-stakes decisions and crisis management.
-- Event Manager — Entrepreneurship Cell: Organized startup events collaborating with founders and CEOs.
+- Managing Director, CRID: Managed and directed multi-domain teams ensuring successful execution of flagship events through strategic leadership and crisis management.
+- Event Manager, Entrepreneurship Cell: Organized startup-focused events collaborating with founders and CEOs; handled planning, coordination, and execution.
 
 ## HOBBIES & INTERESTS
-- Fitness & Gym: Passionate about working out, keeping disciplined and energetic.
-- Building AI Projects: In his free time.
-- Learning from experts like Krish Naik.
+- Fitness & Gym: Passionate about working out regularly, keeping disciplined and energetic.
+- Building AI Projects in free time.
+- Learning from AI experts like Krish Naik.
+- Exploring new Generative AI research and tools.
 
-## FREQUENTLY ASKED QUESTIONS
-Q: Is Amrit available for freelance work?
-A: Amrit is open to opportunities — reach out via LinkedIn or the contact form on the portfolio!
+## LOOKING FOR
+- Data Science roles (internship or full-time)
+- Generative AI / LLM Engineer roles
+- Machine Learning Engineer roles
+- Open to remote and on-site positions
+
+## FAQ
+Q: Is Amrit available for opportunities?
+A: Yes! Reach out via LinkedIn or the contact form on the portfolio.
 Q: Does Amrit have leadership experience?
-A: Yes, he served as Managing Director of CRID and Event Manager for the E-Cell.
+A: Yes, he served as Managing Director of CRID and Event Manager for the Entrepreneurship Cell.
+Q: What are Amrit's hobbies?
+A: Fitness/gym, building AI projects, and learning from experts like Krish Naik.
 `;
 
-    // Inject the system prompt at the beginning of the chat log
     const apiMessages = [
       { role: "system", content: SYSTEM_PROMPT },
       ...messages
