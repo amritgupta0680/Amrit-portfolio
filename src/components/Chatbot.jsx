@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageSquare, X, Send, Bot, User } from "lucide-react";
+import "../styles/Chatbot.css";
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,17 +29,13 @@ export default function Chatbot() {
     setIsTyping(true);
 
     try {
-      // Filter out the initial static greeting to prevent 400 errors from Groq/LLaMA
-      // LLaMA 3 strictly expects the first message after the system prompt to be a 'user' message.
       const apiMessagesPayload = newMessages.filter(
         (msg, index) => !(index === 0 && msg.role === "assistant")
       );
 
-      // Note: We use relative path for Vercel Serverless Function correctly setup in local /api/ directory
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        // Pass only the conversation payload to the backend
         body: JSON.stringify({ messages: apiMessagesPayload })
       });
 
@@ -66,7 +63,7 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end">
+    <div className="chatbot-container">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -74,22 +71,22 @@ export default function Chatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="bg-surface border border-border w-[350px] max-w-[calc(100vw-3rem)] h-[500px] max-h-[70vh] rounded-2xl shadow-2xl overflow-hidden flex flex-col mb-4"
+            className="chatbot-window"
           >
             {/* Header */}
-            <div className="bg-background border-b border-border p-4 flex justify-between items-center">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+            <div className="chatbot-header">
+              <div className="chatbot-header-left">
+                <div className="chatbot-bot-icon">
                   <Bot size={18} />
                 </div>
                 <div>
-                  <h3 className="text-textPrimary font-semibold text-sm">Amrit AI</h3>
-                  <p className="text-textSecondary text-xs">Always online</p>
+                  <h3 className="chatbot-title">Amrit AI</h3>
+                  <p className="chatbot-subtitle">Always online</p>
                 </div>
               </div>
               <button 
                 onClick={() => setIsOpen(false)}
-                className="text-textSecondary hover:text-textPrimary transition-colors"
+                className="chatbot-close-btn"
                 aria-label="Close Chat"
               >
                 <X size={20} />
@@ -97,30 +94,24 @@ export default function Chatbot() {
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-3 scroll-smooth">
+            <div className="chatbot-messages">
               {messages.map((msg, idx) => (
                 <div 
                   key={idx} 
-                  className={`flex gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                  className={`chatbot-msg-row ${msg.role}`}
                 >
                   {msg.role === "assistant" && (
-                    <div className="w-6 h-6 rounded-full bg-primary/20 flex-shrink-0 flex items-center justify-center text-primary mt-1">
+                    <div className="chatbot-bot-icon-small">
                       <Bot size={14} />
                     </div>
                   )}
                   
-                  <div 
-                    className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm leading-relaxed ${
-                      msg.role === "user" 
-                        ? "bg-primary text-white rounded-tr-sm" 
-                        : "bg-background border border-border text-textPrimary rounded-tl-sm whitespace-pre-wrap"
-                    }`}
-                  >
+                  <div className={`chatbot-bubble ${msg.role}`}>
                     {msg.content}
                   </div>
 
                   {msg.role === "user" && (
-                    <div className="w-6 h-6 rounded-full bg-surface border border-border flex-shrink-0 flex items-center justify-center text-textSecondary mt-1">
+                    <div className="chatbot-user-icon">
                       <User size={14} />
                     </div>
                   )}
@@ -128,23 +119,23 @@ export default function Chatbot() {
               ))}
               
               {isTyping && (
-                <div className="flex gap-2 justify-start">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex flex-shrink-0 items-center justify-center text-primary mt-1">
+                <div className="chatbot-typing-container">
+                  <div className="chatbot-bot-icon-small">
                     <Bot size={14} />
                   </div>
-                  <div className="bg-background border border-border rounded-2xl rounded-tl-sm px-4 py-3 flex items-center gap-1">
+                  <div className="chatbot-typing-bubble">
                     <motion.div 
-                      className="w-1.5 h-1.5 bg-textSecondary rounded-full"
+                      className="chatbot-dot"
                       animate={{ y: [0, -3, 0] }}
-                      transition={{  duration: 0.6, repeat: Infinity, delay: 0 }}
+                      transition={{ duration: 0.6, repeat: Infinity, delay: 0 }}
                     />
                     <motion.div 
-                      className="w-1.5 h-1.5 bg-textSecondary rounded-full"
+                      className="chatbot-dot"
                       animate={{ y: [0, -3, 0] }}
                       transition={{ duration: 0.6, repeat: Infinity, delay: 0.2 }}
                     />
                     <motion.div 
-                      className="w-1.5 h-1.5 bg-textSecondary rounded-full"
+                      className="chatbot-dot"
                       animate={{ y: [0, -3, 0] }}
                       transition={{ duration: 0.6, repeat: Infinity, delay: 0.4 }}
                     />
@@ -155,22 +146,22 @@ export default function Chatbot() {
             </div>
 
             {/* Input Form */}
-            <form onSubmit={handleSend} className="p-3 bg-background border-t border-border flex gap-2 items-center">
+            <form onSubmit={handleSend} className="chatbot-form">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask something..."
-                className="flex-1 bg-surface border border-border rounded-xl px-4 py-2.5 text-sm text-textPrimary focus:outline-none focus:border-primary transition-colors"
+                className="chatbot-input"
                 disabled={isTyping}
               />
               <button
                 type="submit"
                 disabled={!input.trim() || isTyping}
-                className="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center hover:bg-primaryHover disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                className="chatbot-send-btn"
                 aria-label="Send Message"
               >
-                <Send size={18} className={`${input.trim() && !isTyping ? "ml-1" : ""}`} />
+                <Send size={18} className={input.trim() && !isTyping ? "chatbot-send-icon" : ""} />
               </button>
             </form>
           </motion.div>
@@ -182,7 +173,7 @@ export default function Chatbot() {
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 rounded-full bg-primary text-white shadow-lg flex items-center justify-center hover:shadow-primary/30 hover:shadow-xl transition-all border-2 border-primary/50"
+        className="chatbot-toggle-btn"
         aria-label="Toggle Chatbot"
       >
         {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
