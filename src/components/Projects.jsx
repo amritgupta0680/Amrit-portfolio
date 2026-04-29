@@ -4,6 +4,16 @@ import "../styles/Projects.css";
 
 const projects = [
   {
+    title: "Generative AI Applications",
+    description:
+      "Built multiple real-world GenAI apps using LLMs, RAG pipelines, and intelligent agents.",
+    longDescription:
+      "A collection of hands-on Generative AI projects exploring LLMs, RAG systems, agents, and fine-tuning techniques.\n\n Projects Included:\n\n• Q&A Chatbot with Groq\nMulti-model chatbot using LLaMA 3 and Mixtral with LangSmith tracing and real-time parameter tuning.\n\n• RAG Document Q&A\nEnd-to-end RAG pipeline with PDF ingestion, chunking, FAISS vector store, and LLM-based answers with source references.\n\n• MathsGPT Agent\nReAct-based intelligent agent with tools including calculator, Wikipedia search, and step-by-step reasoning.\n\n• YouTube & Website Summarizer\nSummarizes content from YouTube videos and web URLs using Groq and HuggingFace LLM backends.\n\n• Fine-Tuned Chatbot (LoRA)\nCustom fine-tuned LLM using LoRA with comparison between base and fine-tuned model responses.\n\nDemonstrates end-to-end understanding of LLM application development, from prompt engineering and retrieval systems to deployment using Streamlit.",
+    tech: ["Python", "LangChain", "Groq", "FAISS", "Streamlit", "LoRA", "Transformers"],
+    github: "https://github.com/amritgupta0680/Genai-portfolio",
+    demo: "https://www.linkedin.com/posts/amrit-gupta-1162b232a_generativeai-langchain-rag-ugcPost-7454815172298219520-QhOh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFL7QSIBxQXKXaYvKjflJba5PxY0pxjuIjk"
+  },
+  {
     title: "AI-Powered Notes App",
     description:
       "A full-stack notes app using AI to generate concise summaries and improve productivity.",
@@ -14,14 +24,14 @@ const projects = [
     demo: "https://drive.google.com/file/d/1sTbzbLZc5STN2xU7SuWj2HJl-2VWaLoY/view?usp=drive_link",
   },
   {
-    title: "Facial Emotion Recognition",
+    title: "Emotion-Based Music Recommender",
     description:
-      "Deep learning system that detects and classifies human facial emotions from images.",
+      "Deep learning system that detects human facial emotions from webcam & predict songs.",
     longDescription:
-      "A CNN-based deep learning system trained on facial datasets to classify emotions from images using OpenCV and Python.",
-    tech: ["Python", "CNN", "OpenCV","flask"],
-    github: "https://github.com/amritgupta0680/FER-Facial-Emotion-Recognition-.git",
-    demo:"https://drive.google.com/file/d/1wuaXsRZCrGa0QgSbT9PFmiZ9tt3R19Yl/view?usp=sharing",
+      "An AI-driven application that performs real-time facial emotion recognition and dynamically suggests music tailored to the user’s emotional state. Combines deep learning, computer vision, and backend integration to deliver a complete end-to-end experience.",
+    tech: ["Python", "CNN", "OpenCV", "flask"],
+    github: "https://github.com/amritgupta0680/Facial-Emotion-Recognition-with-Music-Recommendation.git",
+    demo: "https://drive.google.com/file/d/1wuaXsRZCrGa0QgSbT9PFmiZ9tt3R19Yl/view?usp=sharing",
   },
   {
     title: "IMDB Sentiment Analysis",
@@ -31,7 +41,7 @@ const projects = [
       "Uses NLP pipelines and RNN architectures to predict sentiment polarity (positive/negative) from IMDB movie reviews.",
     tech: ["Python", "NLP", "RNN", "Streamlit"],
     github: "https://github.com/amritgupta0680/IMDB-Sentiment-Analysis-RNN.git",
-    demo:"https://drive.google.com/file/d/1W3udjQOMgfuP6TI0SNZd5OSQcssG7mUl/view?usp=drive_link",
+    demo: "https://drive.google.com/file/d/1W3udjQOMgfuP6TI0SNZd5OSQcssG7mUl/view?usp=drive_link",
   },
   {
     title: "Threadink App",
@@ -39,9 +49,9 @@ const projects = [
       "Full-stack content creation platform with a clean and responsive UI.",
     longDescription:
       "A full-stack web application enabling content creation, user engagement, authentication, and backend API integration.",
-    tech: ["React", "Node.js", "Express","Postgress SQL"],
+    tech: ["React", "Node.js", "Express", "Postgress SQL"],
     github: "https://github.com/amritgupta0680/threadink-app.git",
-    demo:"https://drive.google.com/file/d/15VVx9ioDEXsEdzMeXF1jGQWY8KF21OzK/view",
+    demo: "https://drive.google.com/file/d/15VVx9ioDEXsEdzMeXF1jGQWY8KF21OzK/view",
   },
   {
     title: "Electricity Load Forecasting",
@@ -51,7 +61,7 @@ const projects = [
       "Predicts electricity demand patterns using historical data and machine learning time-series models for improved energy planning.",
     tech: ["Python", "Machine Learning", "Time Series", "flask"],
     github: "https://github.com/amritgupta0680/electricity-load-forecasting.git",
-    demo:"https://drive.google.com/file/d/19WqBlzJwM4o0H6ceHekZxfkO59_DD4ZV/view?usp=sharing",
+    demo: "https://drive.google.com/file/d/19WqBlzJwM4o0H6ceHekZxfkO59_DD4ZV/view?usp=sharing",
   },
   {
     title: "Personalized Diet Recommender",
@@ -61,7 +71,7 @@ const projects = [
       "Provides personalized diet plans using machine learning based on user health, goals, and nutritional requirements.",
     tech: ["Python", "Machine Learning", "Deep Learning", "Streamlit"],
     github: "https://github.com/amritgupta0680/Personalize-Diet-Recommender.git",
-    demo:"https://drive.google.com/file/d/1soP2uGuwJv8LeHdOWyxNt9V-1vH_xkce/view?usp=sharing",
+    demo: "https://drive.google.com/file/d/1soP2uGuwJv8LeHdOWyxNt9V-1vH_xkce/view?usp=sharing",
   },
   {
     title: "Exercise Form Estimator",
@@ -69,9 +79,9 @@ const projects = [
       "Analyzes workout videos using MediaPipe to compute joint angles and score form accuracy. Built with Python and Streamlit",
     longDescription:
       "Analyzes workout videos using MediaPipe to compute joint angles and score form accuracy. Built with Python and Streamlit for easy deployment.",
-    tech: ["MediaPipe","Python",,"OpenCV"],
+    tech: ["MediaPipe", "Python", , "OpenCV"],
     github: "https://github.com/amritgupta0680/Form-Estimator-.git",
-    demo:"https://github.com/amritgupta0680/Form-Estimator-.git",
+    demo: "https://github.com/amritgupta0680/Form-Estimator-.git",
   },
 ];
 
@@ -152,7 +162,7 @@ export default function Projects() {
               exit={{ scale: 0.9, opacity: 0 }}
             >
               <h3>{activeProject.title}</h3>
-              <p>{activeProject.longDescription}</p>
+              <p style={{ whiteSpace: "pre-wrap" }}>{activeProject.longDescription}</p>
 
               <div className="modal-tech">
                 {activeProject.tech.map((t, i) => (

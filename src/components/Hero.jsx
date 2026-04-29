@@ -47,7 +47,7 @@ export default function Hero() {
 
           <p className="hero-role">
             AI & Data Science Engineer <br />
-            Full Stack Web Developer
+            Full Stack Web Developer · Generative AI Engineer · Deep Learning · LLM & RAG Pipelines
           </p>
 
           <div className="hero-buttons">

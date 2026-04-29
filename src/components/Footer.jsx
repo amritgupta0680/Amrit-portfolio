@@ -10,7 +10,7 @@ export default function Footer() {
           <h3>Amrit Gupta</h3>
           <p>
             AI & Data Science Engineer <br />
-            Full Stack Web Developer
+            Full Stack Web Developer · Generative AI Engineer · Deep Learning · LLM & RAG Pipelines
           </p>
         </div>
 

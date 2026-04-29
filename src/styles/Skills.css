@@ -6,12 +6,82 @@
   );
 }
 
-/* GRID */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-  margin-top: 4rem;
+.skills-header {
+  text-align: left;
+}
+
+/* NEW TABBED LAYOUT */
+.skills-container {
+  display: flex;
+  gap: 3rem;
+  margin-top: 3rem;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skills-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.skill-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem;
+  background: transparent;
+  border: 1px solid rgba(31, 41, 51, 0.5);
+  color: #94a3b8;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.skill-tab-btn span.icon {
+  font-size: 1.5rem;
+}
+
+.skill-tab-btn:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  background: rgba(15, 23, 42, 0.4);
+  color: #cbd5e1;
+}
+
+.skill-tab-btn.active {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  transform: scale(1.02);
+}
+
+.skills-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* RESPONSIVE VIEWS */
+.skills-mobile-view {
+  display: none;
+}
+
+.skills-desktop-view {
+  display: block;
+}
+
+/* Make skill card take full height */
+.skills-content .skill-card {
+  margin: 0;
+  height: 100%;
+  min-height: 400px;
 }
 
 /* CARD */
@@ -71,5 +141,30 @@
 @media (max-width: 768px) {
   .skills {
     padding-top: 4rem;
+  }
+  
+  .skills-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  /* Hide the horizontal scroll menu on mobile entirely! */
+  .skills-tabs {
+    display: none;
+  }
+
+  /* Swap to mobile view */
+  .skills-desktop-view {
+    display: none;
+  }
+
+  .skills-mobile-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Gap between cards */
+  }
+
+  .skills-mobile-view .skill-card {
+    min-height: auto; /* Allow card height to wrap its contents */
   }
 }

@@ -3,6 +3,11 @@ import "../styles/Certifications.css";
 
 const certifications = [
   {
+  title: "Generative AI & Large Language Models",
+  provider: "Udemy",
+  link: "https://www.udemy.com/certificate/UC-1c29a97e-9cf2-4885-9c01-3cf6ddb96f2c/",
+  },
+  {
     title: "Data Science",
     provider: "Infosys Springboard",
     link: "https://infyspringboard.onwingspan.com/public-assets/infosysheadstart/cert/lex_auth_0141687577445335044/1-81f8ba78-a91f-4445-aec7-bfb5dafbe718.pdf",

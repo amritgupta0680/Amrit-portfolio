@@ -20,9 +20,11 @@
   padding-right: 1.5rem;
 
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 2rem;
+  text-align: center;
+  gap: 1.5rem;
 }
 
 /* LEFT */

@@ -25,9 +25,10 @@ export default function About() {
           </p>
 
           <p className="about-text">
-            I’m <strong>Amrit Gupta</strong>, an AI & Data Science Engineer and
-            Full Stack Web Developer who loves building intelligent systems and
-            visually engaging web applications.
+            I’m <strong>Amrit Gupta</strong>,final-year B.E. student in Artificial Intelligence and Data Science,
+            passionate about building intelligent systems powered by Generative AI, LLMs,
+            and deep learning.
+
           </p>
 
           <p className="about-text">
@@ -36,6 +37,11 @@ export default function About() {
             I enjoy solving real-world problems and turning ideas into scalable
             products.
           </p>
+          <p className="mt-4 text-textSecondary leading-relaxed">
+            I'm actively seeking opportunities in Data Science and Generative AI where I can
+            contribute to impactful, production-grade AI products.
+          </p>
+
         </motion.div>
 
         {/* RIGHT */}
@@ -53,6 +59,7 @@ export default function About() {
               <li>💻 Full Stack Developer</li>
               <li>🚀 Passionate about innovation</li>
               <li>📍 Open to opportunities</li>
+              <li>🤖 Generative AI Developer (LLMs, RAG, Agents)</li>
             </ul>
           </div>
         </motion.div>
