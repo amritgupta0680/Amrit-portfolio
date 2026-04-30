@@ -14,6 +14,26 @@ const projects = [
     demo: "https://www.linkedin.com/posts/amrit-gupta-1162b232a_generativeai-langchain-rag-ugcPost-7454815172298219520-QhOh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFL7QSIBxQXKXaYvKjflJba5PxY0pxjuIjk"
   },
   {
+    title: "Emotion-Based Music Recommender",
+    description:
+      "Deep learning system that detects human facial emotions from webcam & predict songs.",
+    longDescription:
+      "An AI-driven application that performs real-time facial emotion recognition and dynamically suggests music tailored to the user’s emotional state. Combines deep learning, computer vision, and backend integration to deliver a complete end-to-end experience.",
+    tech: ["Python", "CNN", "OpenCV", "flask"],
+    github: "https://github.com/amritgupta0680/Facial-Emotion-Recognition-with-Music-Recommendation.git",
+    demo: "https://drive.google.com/file/d/1R056JnOn2smY10Z-IN4-OQgq3xRjdClH/view?usp=drivesdk",
+  },
+  {
+    title: "Personalized Diet Recommender",
+    description:
+      "AI-based nutrition recommendation system.",
+    longDescription:
+      "Provides personalized diet plans using machine learning based on user health, goals, and nutritional requirements.",
+    tech: ["Python", "Machine Learning", "Deep Learning", "Streamlit"],
+    github: "https://github.com/amritgupta0680/Personalize-Diet-Recommender.git",
+    demo: "https://drive.google.com/file/d/1soP2uGuwJv8LeHdOWyxNt9V-1vH_xkce/view?usp=sharing",
+  },
+  {
     title: "AI-Powered Notes App",
     description:
       "A full-stack notes app using AI to generate concise summaries and improve productivity.",
@@ -22,16 +42,6 @@ const projects = [
     tech: ["React", "Node.js", "Express", "PostgreSQL"],
     github: "https://github.com/amritgupta0680/-AI-Powered-Notes-App.git",
     demo: "https://drive.google.com/file/d/1sTbzbLZc5STN2xU7SuWj2HJl-2VWaLoY/view?usp=drive_link",
-  },
-  {
-    title: "Emotion-Based Music Recommender",
-    description:
-      "Deep learning system that detects human facial emotions from webcam & predict songs.",
-    longDescription:
-      "An AI-driven application that performs real-time facial emotion recognition and dynamically suggests music tailored to the user’s emotional state. Combines deep learning, computer vision, and backend integration to deliver a complete end-to-end experience.",
-    tech: ["Python", "CNN", "OpenCV", "flask"],
-    github: "https://github.com/amritgupta0680/Facial-Emotion-Recognition-with-Music-Recommendation.git",
-    demo: "https://drive.google.com/file/d/1wuaXsRZCrGa0QgSbT9PFmiZ9tt3R19Yl/view?usp=sharing",
   },
   {
     title: "IMDB Sentiment Analysis",
@@ -62,16 +72,6 @@ const projects = [
     tech: ["Python", "Machine Learning", "Time Series", "flask"],
     github: "https://github.com/amritgupta0680/electricity-load-forecasting.git",
     demo: "https://drive.google.com/file/d/19WqBlzJwM4o0H6ceHekZxfkO59_DD4ZV/view?usp=sharing",
-  },
-  {
-    title: "Personalized Diet Recommender",
-    description:
-      "AI-based nutrition recommendation system.",
-    longDescription:
-      "Provides personalized diet plans using machine learning based on user health, goals, and nutritional requirements.",
-    tech: ["Python", "Machine Learning", "Deep Learning", "Streamlit"],
-    github: "https://github.com/amritgupta0680/Personalize-Diet-Recommender.git",
-    demo: "https://drive.google.com/file/d/1soP2uGuwJv8LeHdOWyxNt9V-1vH_xkce/view?usp=sharing",
   },
   {
     title: "Exercise Form Estimator",

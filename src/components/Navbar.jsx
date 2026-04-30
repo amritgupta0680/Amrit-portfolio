@@ -60,7 +60,7 @@ export default function Navbar() {
         {/* CTA */}
         <div className="nav-cta">
           <a
-            href="https://drive.google.com/uc?export=download&id=1aH2h_baJki7H-PkLWmuLKUBq091iErKf"
+            href="https://drive.google.com/file/d/1vkxBORUkTUfwnEtX7k8wvvSDiFU2PY-g/view?usp=drivesdk"
             target="_blank"
             rel="noreferrer"
             download
