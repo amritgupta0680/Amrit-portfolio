@@ -31,7 +31,7 @@ const projects = [
       "An AI-driven application that performs real-time facial emotion recognition and dynamically suggests music tailored to the user’s emotional state. Combines deep learning, computer vision, and backend integration to deliver a complete end-to-end experience.",
     tech: ["Python", "CNN", "OpenCV", "flask"],
     github: "https://github.com/amritgupta0680/Facial-Emotion-Recognition-with-Music-Recommendation.git",
-    demo: "https://drive.google.com/file/d/1wuaXsRZCrGa0QgSbT9PFmiZ9tt3R19Yl/view?usp=sharing",
+    demo: "https://drive.google.com/file/d/1R056JnOn2smY10Z-IN4-OQgq3xRjdClH/view?usp=drivesdk",
   },
   {
     title: "IMDB Sentiment Analysis",
