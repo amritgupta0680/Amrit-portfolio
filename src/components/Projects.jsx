@@ -34,14 +34,14 @@ const projects = [
     demo: "https://drive.google.com/file/d/1soP2uGuwJv8LeHdOWyxNt9V-1vH_xkce/view?usp=sharing",
   },
   {
-    title: "AI-Powered Notes App",
-    description:
-      "A full-stack notes app using AI to generate concise summaries and improve productivity.",
-    longDescription:
-      "A complete notes management system where users can create, manage, and summarize notes using AI-powered NLP models. Built with a scalable backend and a modern frontend.",
-    tech: ["React", "Node.js", "Express", "PostgreSQL"],
-    github: "https://github.com/amritgupta0680/-AI-Powered-Notes-App.git",
-    demo: "https://drive.google.com/file/d/1sTbzbLZc5STN2xU7SuWj2HJl-2VWaLoY/view?usp=drive_link",
+   title: "AI Job Application Assistant",
+   description:
+   "AI-powered resume analyzer with ATS scoring, Skill gap detection & Recruiter email generation.",
+   longDescription:
+    "Developed an intelligent job application assistant that leverages Large Language Models to streamline the entire job application workflow. The system compares resumes with job descriptions, extracts technical skills, calculates ATS compatibility scores, highlights missing skills, provides actionable improvement suggestions, and automatically generates personalized recruiter outreach emails. Built using Python, LangChain, LangGraph, Groq LLM, and Streamlit to simplify and accelerate the job application process.",
+   tech: ["Python","LangChain","LangGraph","Streamlit","LLMs"],
+   github: "https://github.com/amritgupta0680/AI-Job-Application-Assistant.git",
+   demo: "https://drive.google.com/file/d/144z1qOmzVwzwbAcmZhyP1XViBxdQxE_j/view?usp=drivesdk",
   },
   {
     title: "IMDB Sentiment Analysis",
