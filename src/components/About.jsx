@@ -23,24 +23,22 @@ export default function About() {
           <p className="section-subtitle">
             Who I am & what I do
           </p>
-
           <p className="about-text">
-            I’m <strong>Amrit Gupta</strong>,final-year B.E. student in Artificial Intelligence and Data Science,
-            passionate about building intelligent systems powered by Generative AI, LLMs,
-            and deep learning.
-
+              I’m <strong>Amrit Gupta</strong>, a B.Tech graduate in Artificial Intelligence and Data Science, passionate about building intelligent, real-world solutions using AI.
+              </p>
+              
+           <p className="about-text">
+              I specialize in <strong>Machine Learning</strong>, <strong>Deep Learning</strong>, and <strong>Generative AI</strong>, with hands-on experience in LLMs, RAG pipelines, and data-driven applications.
+          </p>
+              
+          <p className="about-text">
+              Alongside AI, I have experience in <strong>full-stack web development</strong>, allowing me to build complete, scalable, and user-focused applications.
           </p>
 
-          <p className="about-text">
-            I specialize in <strong>machine learning</strong>,{" "}
-            <strong>data-driven solutions</strong>, and modern web technologies.
-            I enjoy solving real-world problems and turning ideas into scalable
-            products.
-          </p>
           <p className="mt-4 text-textSecondary leading-relaxed">
-            I'm actively seeking opportunities in Data Science and Generative AI where I can
-            contribute to impactful, production-grade AI products.
+             I’m actively seeking opportunities in <strong>Data Science</strong> and <strong>Generative AI</strong> to contribute to impactful, production-level systems.
           </p>
+
 
         </motion.div>
 
