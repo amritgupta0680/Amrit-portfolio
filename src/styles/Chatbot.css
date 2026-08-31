@@ -96,7 +96,8 @@
   justify-content: flex-end;
 }
 
-.chatbot-msg-row.ai {
+.chatbot-msg-row.ai,
+.chatbot-msg-row.assistant {
   justify-content: flex-start;
 }
 
@@ -114,7 +115,8 @@
   border-top-right-radius: 0.125rem;
 }
 
-.chatbot-bubble.ai {
+.chatbot-bubble.ai,
+.chatbot-bubble.assistant {
   background-color: #0B0F19;
   border: 1px solid #1F2933;
   color: #F9FAFB;
