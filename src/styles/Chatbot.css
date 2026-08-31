@@ -246,3 +246,39 @@
 .chatbot-toggle-btn:hover {
   box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.3);
 }
+
+/* Markdown rendering inside assistant bubbles */
+.chatbot-markdown p {
+  margin: 0 0 0.5rem 0;
+}
+
+.chatbot-markdown p:last-child {
+  margin-bottom: 0;
+}
+
+.chatbot-markdown ul,
+.chatbot-markdown ol {
+  margin: 0 0 0.5rem 0;
+  padding-left: 1.25rem;
+}
+
+.chatbot-markdown li {
+  margin-bottom: 0.25rem;
+}
+
+.chatbot-markdown strong {
+  color: #F9FAFB;
+  font-weight: 700;
+}
+
+.chatbot-markdown a {
+  color: #3B82F6;
+  text-decoration: underline;
+}
+
+.chatbot-markdown code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.25rem;
+  font-size: 0.8em;
+}

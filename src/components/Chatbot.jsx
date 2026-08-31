@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageSquare, X, Send, Bot, User } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 import "../styles/Chatbot.css";
 
 export default function Chatbot() {
@@ -107,7 +108,13 @@ export default function Chatbot() {
                   )}
                   
                   <div className={`chatbot-bubble ${msg.role}`}>
-                    {msg.content}
+                    {msg.role === "assistant" ? (
+                      <div className="chatbot-markdown">
+                        <ReactMarkdown>{msg.content}</ReactMarkdown>
+                      </div>
+                    ) : (
+                      msg.content
+                    )}
                   </div>
 
                   {msg.role === "user" && (
