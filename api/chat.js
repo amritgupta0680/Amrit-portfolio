@@ -134,7 +134,7 @@ A: Yes! Amrit completed a Web Development Internship at Zaalima Development (Apr
         "Authorization": `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: "llama-3.3-70b-versatile",
+        model: "openai/gpt-oss-120b",
         messages: apiMessages,
         temperature: 0.7,
         max_tokens: 500
